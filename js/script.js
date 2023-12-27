@@ -69,6 +69,8 @@ function addOrUpdateSite(index) {
 
     if (index >= 0) {
       siteList.splice(index, 1, site);
+      hideUpdateBtn();
+
     } else {
       siteList.push(site);
     }
@@ -86,12 +88,21 @@ function addOrUpdateSite(index) {
 function updateSite(index) {
   siteName.value = siteList[index].name;
   siteUrl.value = siteList[index].url;
-  updateBtn.classList.remove("d-none");
-  submitBtn.classList.add("d-none");
-
+  showUpdateBtn();
   updateBtn.onclick = function () {
     addOrUpdateSite(index);
   };
+}
+
+function showUpdateBtn(){
+    updateBtn.classList.remove("d-none");
+    submitBtn.classList.add("d-none");
+}
+
+
+function hideUpdateBtn(){
+    updateBtn.classList.add("d-none");
+    submitBtn.classList.remove("d-none");
 }
 
 function display(searchValue) {
