@@ -8,9 +8,8 @@ var tableData = document.getElementById("tableData");
 var searchTextBox = document.getElementById("searchTextBox");
 var siteList = [];
 
-if (siteList.length == 0) {
-  var list = localStorage.getItem("siteList");
-  siteList = JSON.parse(list);
+if (localStorage.getItem("siteList") !== null) {
+  siteList = JSON.parse(localStorage.getItem("siteList"));
   display();
 }
 
@@ -23,7 +22,7 @@ siteName.onkeyup = function () {
 };
 
 function isSiteNameValid() {
-  var regex = /^\w{3,}$/;
+  var regex = /^(\w)[A-Za-z0-9 ]{3,}$/;
   return isValid(
     regex,
     siteName,
@@ -37,13 +36,12 @@ siteUrl.onkeyup = function () {
 };
 
 function isSiteURLValid() {
-  var regex =
-    /(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?/;
+  var regex = /^(http:\/\/)?(www.)(\w)[A-Za-z0-9 ]+(.)\w*$/;
   return isValid(
     regex,
     siteUrl,
     siteURLError,
-    "please enter valid url starts with http://www."
+    "please enter valid url starts with http://www. or www."
   );
 }
 
