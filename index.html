@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="bookmarker" class="container">
+      <h1 class="text-center my-4">Bookmarker</h1>
+      <div class="box m-auto my-4 px-5 py-3">
+        <h2 class="text-center my-5">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+
+        <label for="siteName" class="my-1 fs-6 fw-bold"
+          ><i class="fa-solid fa-floppy-disk"></i> Site Name</label
+        >
+        <input type="text" class="form-control" name="siteName" id="siteName" />
+        <p id="siteNameError" class="text-danger"></p>
+
+        <label for="siteUrl" class="mb-1 mt-4 fs-6 fw-bold"
+          ><i class="fa-solid fa-link"></i> Site URL</label
+        >
+        <input type="text" class="form-control" name="siteUrl" id="siteUrl" />
+        <p id="siteURLError" class="text-danger"></p>
+
+        <div class="d-flex justify-content-center">
+          <button id="submitBtn" class="btn btn-outline-success my-3 px-5 py-2">
+            Submit
+          </button>
+        </div>
+      </div>
+
+      <div class="table-box table-responsive text-center">
+        <table class="table bg-danger">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Website Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableData">
+            <!-- <tr>
+              <td>1</td>
+              <td>Google</td>
+              <td>
+                <a href="" class="btn btn-success" target="_blank">
+                  <i class="fa-solid fa-eye"></i> Visit
+                </a>
+              </td>
+              <td>
+                <button class="btn btn-danger">
+                  <i class="fa-solid fa-trash-can"></i> Delete
+                </button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
